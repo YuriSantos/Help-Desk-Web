@@ -7,6 +7,8 @@ import {UserNewComponent} from './user-new/user-new.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {TicketNewComponent} from './ticket-new/ticket-new.component';
 import {TicketListComponent} from './ticket-list/ticket-list.component';
+import {TicketDetailComponent} from './ticket-detail/ticket-detail.component';
+import {SummaryComponent} from './summary/summary.component';
 
 export const ROUTES: Routes = [
   {path : '', component: HomeComponent, canActivate: [AuthGuard]},
@@ -17,6 +19,8 @@ export const ROUTES: Routes = [
   {path : 'ticket-new', component: TicketNewComponent, canActivate: [AuthGuard]},
   {path : 'ticket-new/:id', component: TicketNewComponent, canActivate: [AuthGuard]},
   {path : 'ticket-list', component: TicketListComponent, canActivate: [AuthGuard]},
+  {path : 'ticket-detail/:id', component: TicketDetailComponent, canActivate: [AuthGuard]},
+  {path : 'summary', component: SummaryComponent, canActivate: [AuthGuard]},
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(ROUTES);
