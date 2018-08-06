@@ -1,0 +1,59 @@
+<div class="col-md-6">
+  <!-- Horizontal Form -->
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">New Ticket</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="register()" novalidate>
+      <div [ngClass]="classCss" role="alert" *ngIf="message">
+        <strong>{{ message.text }}</strong>
+      </div>
+      <div class="box-body">
+        <div class="form-group" [ngClass]="getFromGroupClass(title.invalid, title.dirty)">
+          <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+
+          <div class="col-sm-10">
+            <input type="text" class="form-control" #title="ngModel" id="inputTitle" name="title" placeholder="Title" [(ngModel)]="ticket.title" required>
+            <span class="help-block" *ngIf="title.invalid && title.dirty">Title is required</span>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="getFromGroupClass(priority.invalid, priority.dirty)">
+          <label for="inputPriority" class="col-sm-2 control-label">Priority</label>
+
+          <div class="col-sm-10">
+            <select class="form-control" #priority="ngModel" name="priority" id="inputPriority" [(ngModel)]="ticket.priority" required>
+              <option>High</option>
+              <option>Normal</option>
+              <option>Low</option>
+            </select>
+            <span class="help-block" *ngIf="priority.invalid && priority.dirty">Priority is required</span>
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="getFromGroupClass(desciption.invalid, desciption.dirty)">
+          <label for="inputDescription" class="col-sm-2 control-label">Description</label>
+
+          <div class="col-sm-10">
+            <textarea class="form-control" #desciption="ngModel" id="inputDescription" rows = "3" name="desciption" placeholder="Desciption..." [(ngModel)]="ticket.description" required></textarea>
+            <span class="help-block" *ngIf="desciption.invalid && desciption.dirty">Desciption is required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="image" class="col-sm-2 control-label">Image</label>
+        <div class="col-sm-10">
+          <img [src]="ticket.image" width="50%" height="50%">
+          <input type="file" id="image" (change)="onFileChange($event)">
+        </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">save</button>
+      </div>
+      <!-- /.box-footer -->
+    </form>
+  </div>
+</div>
