@@ -1,34 +1,15 @@
 # Help Desk web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Este sistema foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 6.0.8.
+Sistema desenvolvido no curso de Angular 5, JWT, Spring Boot,REST,Security,Data e MongoDB
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rode `ng serve` no terminal para o modo de desenvolvimento. Abra o seguinte link no navegador: `http://localhost:4200/`. A aplicação irá se atualizar automaticamente ao alterar qualquer qualquer trecho de código ou na adição de fontes ou recursos.
 
-## Code scaffolding
+## Para entrar na aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## To enter in the application
-
-To login on the application, enter the follow username: admin@helpdesk.com and the follow password: teste123.
+Para entrar na aplicação, entre com o seguinte usuário: admin@helpdesk.com e a seguinte senha: teste123.
 
 
-In order for the application to work, you need to have the Backend API turned on, to clone go to the follow link:
+Para que a aplicação possa funcionar, o Backend precisa estar ativado também, o sistema de backend se encontra no [link](https://github.com/YuriSantos/Help-Desk-Api), clone-o e rode-o. 
