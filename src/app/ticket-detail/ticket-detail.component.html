@@ -22,7 +22,7 @@
             <span class="pull-right"><b>Assigned To:</b><span>{{ ticket?.assignedUser?.email }}</span></span>
           </li>
           <li class="list-group-item">
-            <b>Date:</b> <span>{{ticket.data | date:'dd/MM/yyyy'}}</span>
+            <b>Date:</b> <span>{{ticket.date | date:'dd/MM/yyyy'}}</span>
             <span class="pull-right"><b>Description:</b><span>{{ ticket.description }}</span></span>
           </li>
           <li class="list-group-item">
@@ -36,8 +36,8 @@
                 </tr>
                 <tr *ngFor="let change of ticket.changes">
                   <td>{{ change?.userChange.email }}</td>
-                  <td>{{ change?.userChangeStatus | date:'dd/MM/yyyy HH:mm:ss' }}</td>
-                  <td>{{ change?.userChange.status }}</td>
+                  <td>{{ change?.dataChangeStatus | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+                  <td>{{ change?.status }}</td>
                 </tr>
               </table>
             </span>
@@ -52,7 +52,7 @@
         <button *ngIf="shared.user.profile == 'CUSTOMER' && ticket.status == 'Resolved'"
                 (click)="changeStatus('Approved')" class="btn btn-primary">Approve</button>
         <button *ngIf="shared.user.profile == 'CUSTOMER' && ticket.status == 'Resolved'"
-                (click)="changeStatus('Disaproved')" class="btn btn-primary">Disapprove</button>
+                (click)="changeStatus('Disapproved')" class="btn btn-primary">Disapprove</button>
         <button *ngIf="shared.user.profile == 'TECHNICIAN' && ticket.status == 'Approved'"
                 (click)="changeStatus('Closed')" class="btn btn-primary">Close</button>
       </div>

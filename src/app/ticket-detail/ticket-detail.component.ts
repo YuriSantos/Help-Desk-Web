@@ -33,7 +33,7 @@ export class TicketDetailComponent implements OnInit {
     this.ticketService.findById(id)
       .subscribe((responseApi: ResponseApi)  => {
           this.ticket = responseApi.data;
-          this.ticket.data = new Date(this.ticket.data).toISOString();
+          this.ticket.date = new Date(this.ticket.date).toISOString();
         }, err => {
           this.showMessage({
             type: 'error',
@@ -47,7 +47,7 @@ export class TicketDetailComponent implements OnInit {
     this.ticketService.changeStatus(status, this.ticket)
       .subscribe((responseApi: ResponseApi) => {
         this.ticket = responseApi.data;
-        this.ticket.data = new Date(this.ticket.data).toISOString();
+        this.ticket.date = new Date(this.ticket.date).toISOString();
         this.showMessage({
           type: 'success',
           text: 'Successfully changed status'
@@ -71,7 +71,7 @@ export class TicketDetailComponent implements OnInit {
   private buildClasses(type: string): void {
     this.classCss = {
       'alert': true
-    }
+    };
     this.classCss['alert-' +  type] = true;
   }
 

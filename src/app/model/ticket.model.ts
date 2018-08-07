@@ -10,8 +10,8 @@ export class Ticket {
     public image: string,
     public user: User,
     public assignedUser: User,
-    public data: string,
-    public changes: Array<String>
+    public date: string,
+    public changes: Array<string>
   ) {}
 
 }

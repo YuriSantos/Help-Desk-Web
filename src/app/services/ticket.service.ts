@@ -37,8 +37,8 @@ export class TicketService {
     ticket.title = ticket.title === '' ? 'uninformed' : ticket.title;
     ticket.status = ticket.status === '' ? 'uninformed' : ticket.status;
     ticket.priority = ticket.priority === '' ? 'uninformed' : ticket.priority;
-    return this.http.get(`${HELP_DESK_API}/api/ticket/${page}/${count}/${ticket.number}/${ticket.title}/
-    ${ticket.status}/${ticket.priority}/${assignedToMe}`);
+    return this.http.get(
+      `${HELP_DESK_API}/api/ticket/${page}/${count}/${ticket.number}/${ticket.title}/${ticket.status}/${ticket.priority}/${assignedToMe}`);
   }
 
   changeStatus(status: String, ticket: Ticket) {
